@@ -7,9 +7,9 @@
 
 ### Helm
 
-> - Documentação
-> - Instalação
+> - [Documentação](https://github.com/georgebarbosa90/Automatiza-o-Cluster-Kubernetes-Free5gc/wiki/leme)
+> - [Instalação](https://github.com/georgebarbosa90/Automatiza-o-Cluster-Kubernetes-Free5gc/wiki/Helm-Instala%C3%A7%C3%A3o)
 
 ### Outros
 
-> - Anexos
+> - [Anexos]
