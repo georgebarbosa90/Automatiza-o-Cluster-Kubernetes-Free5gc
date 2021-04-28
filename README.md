@@ -12,4 +12,4 @@
 
 ### Outros
 
-> - Anexos
+> - [Anexos](https://github.com/georgebarbosa90/Automatiza-o-Cluster-Kubernetes-Free5gc/wiki/Cronograma)
