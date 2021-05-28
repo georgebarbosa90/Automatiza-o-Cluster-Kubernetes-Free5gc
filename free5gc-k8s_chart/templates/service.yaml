@@ -1,0 +1,172 @@
+#############################################
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: {{ include "mychart.fullname" . }}
+#  labels:
+#    {{- include "mychart.labels" . | nindent 4 }}
+#spec:
+#  type: {{ .Values.service.type }}
+#  ports:
+#    - port: {{ .Values.service.port }}
+#      targetPort: http
+#      protocol: TCP
+#      name: http
+#  selector:
+#    {{- include "mychart.selectorLabels" . | nindent 4 }}
+##########################################################################################################################
+
+apiVersion: v1
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: db
+    spec:
+      ports:
+        - name: "27017"
+          port: 27017
+          targetPort: 27017
+      selector:
+        io.kompose.service: db
+    status:
+      loadBalancer: {}
+      
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-amf
+    spec:
+      ports:
+        - name: "29518"
+          port: 29518
+          targetPort: 29518
+      selector:
+        io.kompose.service: free5gc-amf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-ausf
+    spec:
+      ports:
+        - name: "29509"
+          port: 29509
+          targetPort: 29509
+      selector:
+        io.kompose.service: free5gc-ausf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-nrf
+    spec:
+      ports:
+        - name: "29510"
+          port: 29510
+          targetPort: 29510
+      selector:
+        io.kompose.service: free5gc-nrf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-nssf
+    spec:
+      ports:
+        - name: "29531"
+          port: 29531
+          targetPort: 29531
+      selector:
+        io.kompose.service: free5gc-nssf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-pcf
+    spec:
+      ports:
+        - name: "29507"
+          port: 29507
+          targetPort: 29507
+      selector:
+        io.kompose.service: free5gc-pcf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: free5gc-smf
+    spec:
+      ports:
+        - name: "29502"
+          port: 29502
+          targetPort: 29502
+      selector:
+        io.kompose.service: free5gc-smf
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+      name: free5gc-udm
+    spec:
+      ports:
+        - name: "29503"
+          port: 29503
+          targetPort: 29503
+      selector:
+        io.kompose.service: free5gc-udm
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+      name: free5gc-udr
+    spec:
+      ports:
+        - name: "29504"
+          port: 29504
+          targetPort: 29504
+      selector:
+        io.kompose.service: free5gc-udr
+    status:
+      loadBalancer: {}
+
+
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      labels:
+        io.kompose.service: free5gc-webui
+      name: free5gc-webui
+    spec:
+      ports:
+        - name: "5000"
+          port: 5000
+          targetPort: 5000
+      selector:
+        io.kompose.service: free5gc-webui
+    status:
+      loadBalancer: {}
