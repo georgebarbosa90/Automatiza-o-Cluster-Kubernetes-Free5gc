@@ -22,11 +22,11 @@ spec:
         image: grafana/grafana
         ports:
         - containerPort: 3000
-          volumeMounts:
-        - name: mypvc
-          mountPath: /var/lib/grafana
-        volumes:
-        - name: mypvc
-          persistentVolumeClaim:
-           claimName: grafana-pvc
+       #   volumeMounts:
+       # - name: mypvc
+       #   mountPath: /var/lib/grafana
+       # volumes:
+       # - name: mypvc
+       #   persistentVolumeClaim:
+       #    claimName: grafana-pvc
 
