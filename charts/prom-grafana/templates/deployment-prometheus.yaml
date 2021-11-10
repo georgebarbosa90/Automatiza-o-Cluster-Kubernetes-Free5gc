@@ -22,16 +22,16 @@ spec:
         image: prom/prometheus
         ports:
         - containerPort: 9090
-        # volumeMounts:
-        # - name: prom-pvc
-        #   mountPath: /prometheus/data
-        # - name: prom-cm
-        #   mountPath: /etc/prometheus/prometheus.yml
-        #   subPath: prometheus.yml
+          volumeMounts:
+          - name: prom-pvc
+            mountPath: /prometheus/data
+          - name: prom-cm
+            mountPath: /etc/prometheus/prometheus.yml
+            subPath: prometheus.yml
       volumes:
-     # - name: prom-pvc
-     #   persistentVolumeClaim:
-     #     claimName: prometheus-pvc
+       - name: prom-pvc
+         persistentVolumeClaim:
+           claimName: prometheus-pvc
        - name: prom-cm
          configMap:
            name: prometheus-cm
